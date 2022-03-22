@@ -1,20 +1,61 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/login',
+    name: 'login-crm',
+    meta: { layout: 'empty' },
+    component: () => import('../views/Login-crm.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/register',
+    name: 'register-crm',
+    meta: { layout: 'empty' },
+    component: () => import('../views/Register-crm.vue')
+  },
+  {
+    path: '/',
+    name: 'home-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/Home-crm.vue')
+  },
+  {
+    path: '/categories',
+    name: 'categories-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/Categories-crm.vue')
+  },
+  {
+    path: '/detali-record',
+    name: 'detali-record-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/Detali-record-crm.vue')
+  },
+  {
+    path: '/history',
+    name: 'history-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/History-crm.vue')
+  },
+  {
+    path: '/planning',
+    name: 'planning-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/Planning-crm.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/Profile-crm.vue')
+  },
+  {
+    path: '/record',
+    name: 'record-crm',
+    meta: { layout: 'main' },
+    component: () => import('../views/Record-crm.vue')
   }
+
 ]
 
 const router = createRouter({
